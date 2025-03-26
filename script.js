@@ -12,7 +12,6 @@ const objects = [
             "I have a door to open",
             "I work with electromagnetic waves",
             "I am fast and quick",
-
         ],
     },
     {
@@ -23,7 +22,6 @@ const objects = [
             "I can even filter water",
             "I save food from getting spoiled",
             "I am cold and steady",
-
         ],
     },
     {
@@ -34,34 +32,31 @@ const objects = [
             "I can chop onions",
             "I have different speedlevel",
             "I make sound while working",
-
         ],
     },
 ];
 
-const randomObject = Math.floor(Math.random()*objects.length);
+const randomObject = Math.floor(Math.random() * objects.length);
 let attempt = objects[randomObject].hints.length;
 let remainAtt = attempt;
 let answer = null;
 
-for (let i=0; i<attempt; i++){
+for (let i = 0; i < attempt; i++) {
     alert(objects[randomObject].hints[i]);
     answer = prompt(objects[randomObject].hints[i]);
-     
+
     let objChose = objects[randomObject].name.toLowerCase();
 
-    if(objChose===answer.toLowerCase()){
-        alert ("Congrats you win");
+    if (objChose === answer.toLowerCase()) {
+        alert("Congrats you win");
         break;
     } else {
         remainAtt--;
-        if(remainAtt>0){
-            alert(`You have ${remainAtt} left` );
+        if (remainAtt > 0) {
+            alert(`You have ${remainAtt} left`);
         } else {
             alert(`You lost: right answer is ${objChose}`);
             break;
         }
     }
-
-
 }
